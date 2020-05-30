@@ -1,11 +1,12 @@
 %global srcname pyvex
 
-# Have arch-specific dependencies, so cannot build as noarch.
+# Has arch-specific dependencies, so cannot build as noarch.
+ExcludeArch: ppc64le
 %global debug_package %{nil}
 
 Name:           python-%{srcname}
 Version:        8.20.5.27
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libVEX and the VEX intermediate representation
 
 # Core is BSD, but code in pyvex_c is GPL because it links statically
@@ -58,6 +59,9 @@ cp %{SOURCE2} .
 %{python3_sitelib}/pyvex/
 
 %changelog
+* Sat May 30 2020 W. Michael Petullo <mike@flyn.org> - 8.20.5.27-2
+- Does not build on ppc64le; mark as such
+
 * Fri May 29 2020 W. Michael Petullo <mike@flyn.org> - 8.20.5.27-1
 - New upstream version
 - Indicate multiple licenses
