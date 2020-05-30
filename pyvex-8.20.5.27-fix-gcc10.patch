@@ -1,0 +1,12 @@
+diff -u --recursive pyvex-8.20.5.27-vanilla/vex/priv/guest_s390_defs.h pyvex-8.20.5.27/vex/priv/guest_s390_defs.h
+--- pyvex-8.20.5.27-vanilla/vex/priv/guest_s390_defs.h	2020-05-28 02:02:45.000000000 -0400
++++ pyvex-8.20.5.27/vex/priv/guest_s390_defs.h	2020-05-29 16:10:49.777339660 -0400
+@@ -264,7 +264,7 @@
+ /* Vector operatons passed to s390x_dirtyhelper_vec_op(...) helper.
+    Please don't change ordering of elements and append new items
+    before  S390_VEC_OP_LAST. */
+-enum {
++typedef enum {
+    S390_VEC_OP_INVALID = 0,
+    S390_VEC_OP_VPKS = 1,
+    S390_VEC_OP_VPKLS = 2,
