@@ -5,8 +5,8 @@ ExcludeArch: ppc64le
 %global debug_package %{nil}
 
 Name:           python-%{srcname}
-Version:        8.20.5.27
-Release:        2%{?dist}
+Version:        8.20.6.1
+Release:        1%{?dist}
 Summary:        A Python interface to libVEX and the VEX intermediate representation
 
 # Core is BSD, but code in pyvex_c is GPL because it links statically
@@ -17,9 +17,6 @@ URL:            https://github.com/angr/pyvex
 Source0:        %{pypi_source}
 Source1:        PACKAGE-LICENSING
 Source2:        LICENSE-other
-
-# https://github.com/angr/pyvex/issues/217
-Patch0:         pyvex-8.20.5.27-fix-gcc10.patch
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
@@ -59,6 +56,10 @@ cp %{SOURCE2} .
 %{python3_sitelib}/pyvex/
 
 %changelog
+* Fri Jun 05 2020 W. Michael Petullo <mike@flyn.org> - 8.20.6.1-1
+- New upstream version
+- Remove unstreamed patch
+
 * Sat May 30 2020 W. Michael Petullo <mike@flyn.org> - 8.20.5.27-2
 - Does not build on ppc64le; mark as such
 
