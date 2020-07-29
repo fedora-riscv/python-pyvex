@@ -6,7 +6,7 @@ ExcludeArch: ppc64le
 
 Name:           python-%{srcname}
 Version:        8.20.7.6
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A Python interface to libVEX and the VEX intermediate representation
 
 # Core is BSD, but code in pyvex_c is GPL because it links statically
@@ -56,6 +56,9 @@ cp %{SOURCE2} .
 %{python3_sitelib}/pyvex/
 
 %changelog
+* Wed Jul 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 8.20.7.6-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Fri Jul 24 2020 W. Michael Petullo <mike@flyn.org> - 8.20.7.6-1
 - New upstream version
 
