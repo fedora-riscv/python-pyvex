@@ -5,7 +5,7 @@ ExcludeArch: ppc64le
 %global debug_package %{nil}
 
 Name:           python-%{srcname}
-Version:        8.20.7.27
+Version:        9.0.4495
 Release:        1%{?dist}
 Summary:        A Python interface to libVEX and the VEX intermediate representation
 
@@ -56,6 +56,9 @@ cp %{SOURCE2} .
 %{python3_sitelib}/pyvex/
 
 %changelog
+* Thu Oct 08 2020 W. Michael Petullo <mike@flyn.org> - 9.0.4495-1
+- New upstream version
+
 * Sat Aug 01 2020 W. Michael Petullo <mike@flyn.org> - 8.20.7.27-1
 - New upstream version
 
