@@ -5,9 +5,13 @@ ExcludeArch: ppc64le
 %global debug_package %{nil}
 
 Name:           python-%{srcname}
+<<<<<<< HEAD
 Version:        9.0.4495
+=======
+Version:        9.0.4885
+>>>>>>> master
 Release:        1%{?dist}
-Summary:        A Python interface to libVEX and the VEX intermediate representation
+Summary:        Python interface to libVEX and the VEX intermediate representation
 
 # Core is BSD, but code in pyvex_c is GPL because it links statically
 # against VEX. The files e4c_lite.h, host_generic_maddf.c, and
@@ -18,20 +22,21 @@ Source0:        %{pypi_source}
 Source1:        PACKAGE-LICENSING
 Source2:        LICENSE-other
 
-BuildRequires:  python3-devel
-BuildRequires:  python3-setuptools
-BuildRequires:  python3-cffi
 BuildRequires:  gcc
 
 %description
-A Python interface to libVEX and the VEX intermediate representation
+A Python interface to libVEX and the VEX intermediate representation.
 
 %package -n python3-%{srcname}
 Summary:        %{summary}
+
+BuildRequires:  python3-devel
+BuildRequires:  python3-setuptools
+BuildRequires:  python3-cffi
 %{?python_provide:%python_provide python3-%{srcname}}
 
 %description -n python3-%{srcname}
-A Python interface to libVEX and the VEX intermediate representation
+A Python interface to libVEX and the VEX intermediate representation.
 
 %prep
 rm -f %{srcname}.egg-info/
@@ -56,6 +61,15 @@ cp %{SOURCE2} .
 %{python3_sitelib}/pyvex/
 
 %changelog
+<<<<<<< HEAD
+=======
+* Wed Nov 25 2020 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.4885-1
+- Update to new upstream release 9.0.4885 (#1901722)
+
+* Fri Nov 06 2020 W. Michael Petullo <mike@flyn.org> - 9.0.4663-1
+- New upstream version
+
+>>>>>>> master
 * Thu Oct 08 2020 W. Michael Petullo <mike@flyn.org> - 9.0.4495-1
 - New upstream version
 
