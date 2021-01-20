@@ -1,7 +1,7 @@
 %global srcname pyvex
 
 # Has arch-specific dependencies, so cannot build as noarch.
-ExcludeArch: ppc64le
+ExcludeArch: ppc64le s390x
 %global debug_package %{nil}
 
 Name:           python-%{srcname}
