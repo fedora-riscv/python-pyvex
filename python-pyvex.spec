@@ -6,7 +6,7 @@ ExcludeArch: ppc64le s390x
 
 Name:           python-%{srcname}
 Version:        9.0.5450
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Python interface to libVEX and the VEX intermediate representation
 
 # Core is BSD, but code in pyvex_c is GPL because it links statically
@@ -57,6 +57,9 @@ cp %{SOURCE2} .
 %{python3_sitelib}/pyvex/
 
 %changelog
+* Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 9.0.5450-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Wed Jan 20 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.5450-1
 - Update to latest upstream release 9.0.5450 (#1905673)
 
