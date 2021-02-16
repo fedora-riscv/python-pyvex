@@ -5,7 +5,7 @@ ExcludeArch: ppc64le s390x
 %global debug_package %{nil}
 
 Name:           python-%{srcname}
-Version:        9.0.5811
+Version:        9.0.5903
 Release:        1%{?dist}
 Summary:        Python interface to libVEX and the VEX intermediate representation
 
@@ -57,6 +57,9 @@ cp %{SOURCE2} .
 %{python3_sitelib}/pyvex/
 
 %changelog
+* Tue Feb 16 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.5903-1
+- Update to latest upstream release 9.0.5903 (#1905673)
+
 * Fri Feb 12 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.5811-1
 - Update to latest upstream release 9.0.5811 (#1905673)
 
