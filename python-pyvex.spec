@@ -1,11 +1,11 @@
 %global srcname pyvex
 
 # Has arch-specific dependencies, so cannot build as noarch.
-ExcludeArch: ppc64le
+ExcludeArch: ppc64le s390x
 %global debug_package %{nil}
 
 Name:           python-%{srcname}
-Version:        9.0.4885
+Version:        9.0.6852
 Release:        1%{?dist}
 Summary:        Python interface to libVEX and the VEX intermediate representation
 
@@ -14,7 +14,7 @@ Summary:        Python interface to libVEX and the VEX intermediate representati
 # host_generic_maddf.h are LGPL.
 License:        BSD and GPLv3+ and LGPLv3
 URL:            https://github.com/angr/pyvex
-Source0:        %{pypi_source}
+Source0:        %{url}/archive/v%{version}/%{srcname}-%{version}.tar.gz
 Source1:        PACKAGE-LICENSING
 Source2:        LICENSE-other
 
@@ -57,6 +57,39 @@ cp %{SOURCE2} .
 %{python3_sitelib}/pyvex/
 
 %changelog
+* Mon Apr 26 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.6852-1
+- Update to latest upstream release 9.0.6852 (#1905673)
+
+* Tue Mar 02 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.6136-1
+- Update to latest upstream release 9.0.6136 (#1905673)
+
+* Tue Feb 16 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.5903-1
+- Update to latest upstream release 9.0.5903 (#1905673)
+
+* Fri Feb 12 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.5811-1
+- Update to latest upstream release 9.0.5811 (#1905673)
+
+* Tue Feb 09 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.5739-1
+- Update to latest upstream release 9.0.5739 (#1905673)
+
+* Wed Jan 27 2021 Fedora Release Engineering <releng@fedoraproject.org> - 9.0.5450-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
+* Wed Jan 20 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.5450-1
+- Update to latest upstream release 9.0.5450 (#1905673)
+
+* Fri Jan 08 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.5327-1
+- Update to latest upstream release 9.0.5327 (#1905673)
+
+* Sun Dec 27 2020 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.5171-1
+- Update to latest upstream release 9.0.5171 (#1905673)
+
+* Fri Dec 18 2020 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.5034-1
+- Update to new upstream release 9.0.5034 (#1905673)
+
+* Wed Dec 16 2020 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.5002-1
+- Update to new upstream release 9.0.5002 (#1905673)
+
 * Wed Nov 25 2020 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.4885-1
 - Update to new upstream release 9.0.4885 (#1901722)
 
