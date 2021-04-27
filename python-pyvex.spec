@@ -14,7 +14,7 @@ Summary:        Python interface to libVEX and the VEX intermediate representati
 # host_generic_maddf.h are LGPL.
 License:        BSD and GPLv3+ and LGPLv3
 URL:            https://github.com/angr/pyvex
-Source0:        %{url}/archive/v%{version}/%{pypi_name}-%{version}.tar.gz
+Source0:        %{pypi_source}
 Source1:        PACKAGE-LICENSING
 Source2:        LICENSE-other
 
