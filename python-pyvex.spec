@@ -1,11 +1,11 @@
-%global srcname pyvex
+%global pypi_name pyvex
 
 # Has arch-specific dependencies, so cannot build as noarch.
 ExcludeArch: ppc64le s390x
 %global debug_package %{nil}
 
-Name:           python-%{srcname}
-Version:        9.0.6852
+Name:           python-%{pypi_name}
+Version:        9.0.6885
 Release:        1%{?dist}
 Summary:        Python interface to libVEX and the VEX intermediate representation
 
@@ -14,7 +14,7 @@ Summary:        Python interface to libVEX and the VEX intermediate representati
 # host_generic_maddf.h are LGPL.
 License:        BSD and GPLv3+ and LGPLv3
 URL:            https://github.com/angr/pyvex
-Source0:        %{url}/archive/v%{version}/%{srcname}-%{version}.tar.gz
+Source0:        %{pypi_source}
 Source1:        PACKAGE-LICENSING
 Source2:        LICENSE-other
 
@@ -23,20 +23,20 @@ BuildRequires:  gcc
 %description
 A Python interface to libVEX and the VEX intermediate representation.
 
-%package -n python3-%{srcname}
+%package -n python3-%{pypi_name}
 Summary:        %{summary}
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
 BuildRequires:  python3-cffi
-%{?python_provide:%python_provide python3-%{srcname}}
+%{?python_provide:%python_provide python3-%{pypi_name}}
 
-%description -n python3-%{srcname}
+%description -n python3-%{pypi_name}
 A Python interface to libVEX and the VEX intermediate representation.
 
 %prep
-rm -f %{srcname}.egg-info/
-%autosetup -n %{srcname}-%{version} -p1
+rm -f %{pypi_name}.egg-info/
+%autosetup -n %{pypi_name}-%{version} -p1
 
 %build
 %py3_build
@@ -47,16 +47,19 @@ mv pyvex_c/LICENSE LICENSE-pyvex_c
 cp %{SOURCE1} .
 cp %{SOURCE2} .
 
-%files -n python3-%{srcname}
+%files -n python3-%{pypi_name}
 %doc README.md
 %license PACKAGE-LICENSING
 %license LICENSE
 %license LICENSE-pyvex_c
 %license LICENSE-other
-%{python3_sitelib}/%{srcname}-%{version}-py%{python3_version}.egg-info/
+%{python3_sitelib}/%{pypi_name}-%{version}-py%{python3_version}.egg-info/
 %{python3_sitelib}/pyvex/
 
 %changelog
+* Tue Apr 27 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.6885-1
+- Update to latest upstream release 9.0.6885 (#1905673)
+
 * Mon Apr 26 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.6852-1
 - Update to latest upstream release 9.0.6852 (#1905673)
 
