@@ -6,7 +6,7 @@ ExcludeArch: ppc64le s390x
 
 Name:           python-%{pypi_name}
 Version:        9.0.6885
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Python interface to libVEX and the VEX intermediate representation
 
 # Core is BSD, but code in pyvex_c is GPL because it links statically
@@ -57,6 +57,9 @@ cp %{SOURCE2} .
 %{python3_sitelib}/pyvex/
 
 %changelog
+* Fri Jun 04 2021 Python Maint <python-maint@redhat.com> - 9.0.6885-2
+- Rebuilt for Python 3.10
+
 * Tue Apr 27 2021 Fabian Affolter <mail@fabian-affolter.ch> - 9.0.6885-1
 - Update to latest upstream release 9.0.6885 (#1905673)
 
