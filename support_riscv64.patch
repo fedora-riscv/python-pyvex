@@ -1,0 +1,39 @@
+diff --git a/pyvex_c/pyvex.c b/pyvex_c/pyvex.c
+index 8f4f6a3..c14c568 100644
+--- a/pyvex_c/pyvex.c
++++ b/pyvex_c/pyvex.c
+@@ -179,6 +179,8 @@ int vex_init() {
+ #  endif
+ #elif defined(__powerpc__)
+         vta.arch_host = VexArchPPC64;
++#elif defined(__riscv) && defined(__riscv_xlen == 64)
++        vta.arch_host = VexArchRISCV64;
+ #else
+ #error "Unsupported host arch"
+ #endif
+diff --git a/vex/pub/libvex.h b/vex/pub/libvex.h
+index 18f331b..749cc73 100644
+--- a/vex/pub/libvex.h
++++ b/vex/pub/libvex.h
+@@ -61,6 +61,7 @@ typedef
+       VexArchS390X,
+       VexArchMIPS32,
+       VexArchMIPS64,
++      VexArchRISCV64,
+       VexArchTILEGX
+    }
+    VexArch;
+diff --git a/vex/pub/libvex_basictypes.h b/vex/pub/libvex_basictypes.h
+index 4dbd5b3..7946f75 100644
+--- a/vex/pub/libvex_basictypes.h
++++ b/vex/pub/libvex_basictypes.h
+@@ -216,6 +216,9 @@ typedef  unsigned long HWord;
+ #elif defined(__tilegx__)
+ #   define VEX_HOST_WORDSIZE 8
+ #   define VEX_REGPARM(_n) /* */
++#elif defined(__riscv) && defined(__riscv_xlen == 64)
++#   define VEX_HOST_WORDSIZE 8
++#   define VEX_REGPARM(_n) /* */
+ 
+ #else
+ #   error "Vex: Fatal: Can't establish the host architecture"

@@ -6,7 +6,7 @@ ExcludeArch: ppc64le s390x
 
 Name:           python-%{pypi_name}
 Version:        9.2.39
-Release:        3%{?dist}
+Release:        3.rv64%{?dist}
 Summary:        Python interface to libVEX and the VEX intermediate representation
 
 # Core is BSD, but code in pyvex_c is GPL because it links statically
@@ -17,6 +17,7 @@ URL:            https://github.com/angr/pyvex
 Source0:        %{pypi_source}
 Source1:        PACKAGE-LICENSING
 Source2:        LICENSE-other
+Patch0:         support_riscv64.patch
 
 BuildRequires:  gcc
 
